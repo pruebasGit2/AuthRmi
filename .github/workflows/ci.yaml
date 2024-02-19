@@ -37,8 +37,8 @@ jobs:
   
       - name: Release
         uses: softprops/action-gh-release@v1
-        tag_name: test
         with:
+          tag_name: test
           files: |
             ./target/AuthRmi-1.0-SNAPSHOT.jar
             ./target/AuthRmi-1.0-SNAPSHOT-jar-with-dependencies.jar
