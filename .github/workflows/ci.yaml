@@ -34,11 +34,11 @@ jobs:
 
       - name: Build Initial with Maven
         working-directory: ./initial
-        run: ./mvnw --batch-mode clean package -DskipTests
+        run: ./mvnw --batch-mode clean package
 
       - name: Test
         run: ./mvnw test
 
       - name: Build Complete with Maven
         working-directory: ./complete
-        run: ./mvnw --batch-mode clean package -DskipTests
+        run: ./mvnw --batch-mode clean package
