@@ -38,6 +38,6 @@ jobs:
       - name: cehck
         run: |
           cd target
-          ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'
+          ls -l
 
 
