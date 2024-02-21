@@ -4,6 +4,7 @@
  */
 package classes;
 
+import java.io.Serializable;
 /**
  *
  * @author Diego
