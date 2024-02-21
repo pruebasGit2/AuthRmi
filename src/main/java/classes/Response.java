@@ -9,7 +9,7 @@ package classes;
  * @author Diego
  * @param <T>
  */
-public class Response<T> {
+public class Response<T> implements Serializable {
     private final String[] errors;
     private final boolean success;
     private final T data;
