@@ -38,9 +38,7 @@ jobs:
 
       - name: Versioning
         id: ejecutar-script
-        run: |
-          resultado=$(./version.sh ${{ github.event.head_commit.message }})
-          echo "::set-output name=valor_script::$resultado"
+        run: ./version.sh
 
       - name: Build project
         run: mvn -B package --file pom.xml

@@ -48,3 +48,5 @@ else
     # insert new version in file version
     echo "$new_version" > "version"
 fi
+
+echo "{new_version}={$new_version}" >> $GITHUB_OUTPUT
