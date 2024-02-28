@@ -38,7 +38,7 @@ jobs:
 
       - name: Versioning
         id: version
-        run: ./version.sh
+        run: echo "new_version=$(./version.sh)" >> $GITHUB_OUTPUT
 
       - name: Build project
         run: mvn -B package --file pom.xml
