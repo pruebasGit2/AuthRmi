@@ -37,7 +37,7 @@ jobs:
         run: chmod +x ./version.sh
 
       - name: Versioning
-        id: ejecutar-script
+        id: version
         run: ./version.sh
 
       - name: Build project
@@ -46,6 +46,6 @@ jobs:
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: latest
+          tag_name: ${{ steps.version.outputs.new_version }}
           files: |
             ./target/AuthRmi-1.0-SNAPSHOT.jar
