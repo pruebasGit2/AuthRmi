@@ -42,10 +42,13 @@ jobs:
 
       - name: Build project
         run: mvn -B package --file pom.xml
-  
+
+      - name: Rename Jar
+        run: mv ./target/AuthRmi-1.0-SNAPSHOT.jar ./target/AuthRmi-${{ steps.version.outputs.new_version }}.jar
+
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
           tag_name: ${{ steps.version.outputs.new_version }}
           files: |
-            ./target/AuthRmi-1.0-SNAPSHOT.jar
+            ./target/AuthRmi-${{ steps.version.outputs.new_version }}.jar
