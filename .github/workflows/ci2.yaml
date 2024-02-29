@@ -18,13 +18,14 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Crer
-        run: echo "holas" >> pepe.txt
+        run: |
+          echo "holas" >> pepe.txt
+          git add ./pepe.txt
 
       - name: Merge test -> main
         uses: devmasx/merge-branch@master
         with:
           type: now
-          from_branch: dev
           message: 'chore: version'
           target_branch: test
           github_token: ${{ secrets.GITHUB_TOKEN }}
