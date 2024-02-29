@@ -42,10 +42,17 @@ public interface IAuthProvider extends Remote {
     
     /**
      *
-     * @param registerArgs
+     * @param register2Args
      * @return response with token
      * @throws RemoteException
      */
     public Response<String> Register2(RegisterArgs registerArgs) throws RemoteException;
     
+    /**
+     *
+     * @param register3Args
+     * @return response with token
+     * @throws RemoteException
+     */
+    public Response<String> Register3(RegisterArgs registerArgs) throws RemoteException;
 }
