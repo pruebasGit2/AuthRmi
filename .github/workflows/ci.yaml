@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  build:
+  check:
     name: Build Main Branch
     runs-on: ubuntu-latest
     permissions: 

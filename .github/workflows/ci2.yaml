@@ -30,5 +30,7 @@ jobs:
 
       - name: Commit report
         run: |
+          git config --global user.name 'diegomated1'
+          git config --global user.email 'diegocardwr@gmail.com'
           git commit -am "chore: version"
           git push
