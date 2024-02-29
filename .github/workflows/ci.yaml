@@ -3,10 +3,10 @@ name: CI Build
 on:
   push:
     branches:
-      - main
+      - test
   pull_request:
     branches:
-      - main
+      - test
 
 jobs:
   check:
@@ -50,6 +50,8 @@ jobs:
     if: success()
     permissions: 
       contents: write
+    outputs:
+      new_version: ${{ steps.version.outputs.new_version }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -93,11 +95,11 @@ jobs:
           path: .
 
       - name: Rename Jar
-        run: mv ./AuthRmi-1.0-SNAPSHOT.jar ./AuthRmi-${{ needs.version.outputs.output1 }}.jar
+        run: mv ./AuthRmi-1.0-SNAPSHOT.jar ./AuthRmi-${{ needs.version.outputs.new_version }}.jar
 
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: ${{ needs.version.outputs.output1 }}
+          tag_name: ${{ needs.version.outputs.new_version }}
           files: |
-            ./AuthRmi-${{ needs.version.outputs.output1 }}.jar
+            ./AuthRmi-${{ needs.version.outputs.new_version }}.jar
