@@ -17,20 +17,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Crer
+        run: echo "holas" >> pepe.txt
+
       - name: Merge test -> main
         uses: devmasx/merge-branch@master
         with:
           type: now
           from_branch: dev
+          message: 'chore: version'
           target_branch: test
           github_token: ${{ secrets.GITHUB_TOKEN }}
-      
-      - name: Crer
-        run: echo "holas" >> pepe.txt
-
-      - name: Commit report
-        run: |
-          git config --global user.name 'diegomated1'
-          git config --global user.email 'diegocardwr@gmail.com'
-          git commit -am "chore: version"
-          git push
