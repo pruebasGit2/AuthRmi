@@ -20,12 +20,15 @@ jobs:
       - name: Crer
         run: |
           echo "holas" >> pepe.txt
+          git config --global user.name 'diegomated1'
+          git config --global user.email 'diegocardwr@gmail.com'
           git add ./pepe.txt
+          git commit -am "chore: version"
+          git push
 
       - name: Merge test -> main
         uses: devmasx/merge-branch@master
         with:
           type: now
-          message: 'chore: version'
           target_branch: test
           github_token: ${{ secrets.GITHUB_TOKEN }}
