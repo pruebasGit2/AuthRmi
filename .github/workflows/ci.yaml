@@ -71,11 +71,10 @@ jobs:
           git commit -am "chore: version ${{ steps.version.outputs.new_version }}"
           git push
 
-      - name: Merge to main
+      - name: Merge test to main
         uses: devmasx/merge-branch@master
         with:
           type: now
-          from_branch: test
           target_branch: main
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
