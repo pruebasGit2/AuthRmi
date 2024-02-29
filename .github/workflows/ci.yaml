@@ -69,7 +69,7 @@ jobs:
           git config --global user.email 'diegocardwr@gmail.com'
           git add ./version
           git commit -am "chore: version ${{ steps.version.outputs.new_version }}"
-          git push
+          git push origin test
 
   release:
     runs-on: ubuntu-latest
