@@ -22,6 +22,7 @@ jobs:
           echo "holas" >> pepe.txt
           git config --global user.name 'diegomated1'
           git config --global user.email 'diegocardwr@gmail.com'
+          git add ./pepe.txt
           git commit -am "chore: version"
           git push
 
